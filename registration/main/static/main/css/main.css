@@ -16,6 +16,7 @@ body {
 }
 
 .page-header {
+    font-family: monospace;
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 15px;
