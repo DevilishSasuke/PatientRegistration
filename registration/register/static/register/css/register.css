@@ -1,0 +1,22 @@
+* {
+    font-weight: 700
+}
+
+body {
+    background: rgb(200, 200, 200);
+}
+
+.container {
+    margin: auto;
+    width: 70%;
+    height: 100%;
+    text-align: center;
+    padding: 50px 20px;
+    display: block;
+}
+
+.page-header {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+}
