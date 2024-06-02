@@ -4,6 +4,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('main.urls')),
-    path('register', include('register.urls')),
-    path('change', include('change.urls')),
+    path('register', include('main.urls')),
+    path('change', include('main.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
