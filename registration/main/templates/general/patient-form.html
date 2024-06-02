@@ -1,8 +1,9 @@
+{% load static %}
 <form class="patient-form">
     <div class="data-row">
         <label>Фамилия *</label>
         <input type="text" id="lastname" placeholder="Иванов"
-               required pattern="^[а-яА-ЯёЁa-zA-Z]+[\s\-]?$">
+               required pattern="^[а-яА-ЯёЁa-zA-Z]+[\s\-]?$" minlength="2">
     </div>
     <div class="data-row">
         <label>Имя *</label>
@@ -12,30 +13,28 @@
     <div class="data-row">
         <label>Отчество</label>
         <input type="text" id="middlename" placeholder="Иванович"
-               pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+               pattern="^[а-яА-ЯёЁa-zA-Z]+$" minlength="2">
     </div>
     <div class="data-row">
         <label>Электронная почта</label>
         <input type="text" id="email" placeholder="example@eg.com"
-               patter="^[\w\.-]+@[\w\.-]+\.\w+$">
+               patter="^[\w\.-]+@[\w\.-]+\.\w+$" minlength="5">
     </div>
     <div class="data-row">
         <label>Номер телефона *</label>
         <input type="text" id="phone" placeholder="+7(123) 456-78-90"
-               required pattern="^[\w\.-]+@[\w\.-]+\.\w+$">
+               required pattern="^[\w\.-]+@[\w\.-]+\.\w+$" minlength="10">
     </div>
     <div class="data-row">
         <label>Адрес проживания *</label>
         <input type="text" id="address" placeholder="Город, улица, дом, квартира"
-               required pattern="^[а-яА-ЯёЁa-zA-Z]+,\s?[а-яА-ЯёЁa-zA-Z]+\s?\w*,\s?\d+\s?(/\d+)?$">
+               required pattern="^[а-яА-ЯёЁa-zA-Z]+,\s?[а-яА-ЯёЁa-zA-Z]+\s?\w*,\s?\d+,\s?\d+$"  minlength="12">
     </div>
     <div class="data-row">
         <label>Дата рождения *</label>
-        <input type="date" id="birthdate" required>
+        <input type="date" id="birthdate"
+               required min="1900-01-01">
     </div>
     <p>* обозначены обязательные поля</p>
-    <div class="button-container">
-    <button class="styled-button" style="background-color: #27ae60;">Подтвердить</button>
-    <button class="styled-button" style="background-color: #FF4742;">Отменить</button>
-    </div>
+    {% include "general/action-buttons.html" %}
 </form>
