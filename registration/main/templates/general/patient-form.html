@@ -1,0 +1,41 @@
+<form class="patient-form">
+    <div class="data-row">
+        <label>Фамилия *</label>
+        <input type="text" id="lastname" placeholder="Иванов"
+               required pattern="^[а-яА-ЯёЁa-zA-Z]+[\s\-]?$">
+    </div>
+    <div class="data-row">
+        <label>Имя *</label>
+        <input type="text" id="name" placeholder="Иван"
+               required pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+    </div>
+    <div class="data-row">
+        <label>Отчество</label>
+        <input type="text" id="middlename" placeholder="Иванович"
+               pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+    </div>
+    <div class="data-row">
+        <label>Электронная почта</label>
+        <input type="text" id="email" placeholder="example@eg.com"
+               patter="^[\w\.-]+@[\w\.-]+\.\w+$">
+    </div>
+    <div class="data-row">
+        <label>Номер телефона *</label>
+        <input type="text" id="phone" placeholder="+7(123) 456-78-90"
+               required pattern="^[\w\.-]+@[\w\.-]+\.\w+$">
+    </div>
+    <div class="data-row">
+        <label>Адрес проживания *</label>
+        <input type="text" id="address" placeholder="Город, улица, дом, квартира"
+               required pattern="^[а-яА-ЯёЁa-zA-Z]+,\s?[а-яА-ЯёЁa-zA-Z]+\s?\w*,\s?\d+\s?(/\d+)?$">
+    </div>
+    <div class="data-row">
+        <label>Дата рождения *</label>
+        <input type="date" id="birthdate" required>
+    </div>
+    <p>* обозначены обязательные поля</p>
+    <div class="button-container">
+    <button class="styled-button" style="background-color: #27ae60;">Подтвердить</button>
+    <button class="styled-button" style="background-color: #FF4742;">Отменить</button>
+    </div>
+</form>

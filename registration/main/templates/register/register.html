@@ -12,34 +12,10 @@
 </head>
 <body>
 <div class="container">
+    <div class="content">
     <header class="page-header">Регистрация пациента</header>
-    <form class="registration-form">
-        <div class="data-row">
-
-        </div> // Фамилия
-        <div class="data-row">
-
-        </div> // Имя
-        <div class="data-row">
-
-        </div> // Отчество
-        <div class="data-row">
-
-        </div> // Почта
-        <div class="data-row">
-
-        </div> // Номер телефона
-        <div class="data-row">
-
-        </div> // Адрес проживания
-        <div class="data-row">
-
-        </div> // Дата рождения
-        <div class="button-container">
-        <button class="styled-button" style="background-color: #27ae60;">Подтвердить</button>
-        <button class="styled-button" style="background-color: #FF4742;">Отменить</button>
-        </div>
-    </form>
+        {% include "general/patient-form.html" %}
+    </div>
 </div>
 </body>
 </html>
