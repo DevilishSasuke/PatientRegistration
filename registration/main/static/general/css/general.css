@@ -22,6 +22,11 @@ body {
     display: block;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .page-header {
     font-family: 'Poppins', sans-serif;
     font-size: 3rem;
@@ -69,7 +74,7 @@ body {
   letter-spacing: 1.2px;
 }
 
-.data-row > input[type="text"]::placeholder {
+.data-row > input::placeholder {
     color: #666;
     font-size: 18px;
     font-family: 'Georgia', sans-serif;

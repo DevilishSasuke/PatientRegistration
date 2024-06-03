@@ -1,22 +1,14 @@
+{% extends 'general/layout.html' %}
 {% load static %}
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Главная страница</title>
-    <link rel="stylesheet" href="{% static 'general/css/general.css' %}">
+
+{% block title %}{{ title }}{% endblock %}
+{% block header %}{{ header }}{% endblock %}
+
+{% block dependencies %}
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
-</head>
-<body>
-    <div class="container">
-        <div class="content">
-            <header class="page-header">Главная страница</header>
-            <button class="form-button" onclick="location.href='/register'">Зарегистрировать пациента</button>
-            <button class="form-button" onclick="location.href='/change'">Изменить данные пациента</button>
-        </div>
-    </div>
-</body>
-</html>
+{% endblock %}
+
+{% block content %}
+    <button class="form-button" onclick="location.href='/register'">Зарегистрировать пациента</button>
+    <button class="form-button" onclick="location.href='/change'">Изменить данные пациента</button>
+{% endblock %}

@@ -1,4 +1,5 @@
 /.idea/
+/venv/
 
 ### OSX ###
 .DS_Store

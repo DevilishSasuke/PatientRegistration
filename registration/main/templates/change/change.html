@@ -1,27 +1,20 @@
+{% extends 'general/layout.html' %}
 {% load static %}
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Изменить данные</title>
-    <link rel="stylesheet" href="{% static 'general/css/general.css' %}">
+
+{% block title %}{{ title }}{% endblock %}
+{% block header %}{{ header }}{% endblock %}
+
+{% block dependencies %}
     <link rel="stylesheet" href="{% static 'change/css/change.css' %}">
-</head>
-<body>
-<div class="container">
-    <div class="content">
-    <header class="page-header">Изменение данных пациента</header>
+{% endblock %}
+
+{% block content %}
     <form class="get-patient">
         <div class="data-row">
             <label>Введите имя пациента</label>
             <input type="text" id="patient-name" placeholder="Иванов Иван Иванович">
         </div>
-    {% include "general/action-buttons.html" %}
     </form>
-    </div>
-</div>
-</body>
-</html>
+    {% for el in patients %}
+    {% endfor %}
+{% endblock %}

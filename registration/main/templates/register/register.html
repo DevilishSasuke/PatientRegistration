@@ -1,21 +1,13 @@
+{% extends 'general/layout.html' %}
 {% load static %}
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Регистрация</title>
-    <link rel="stylesheet" href="{% static 'general/css/general.css' %}">
+
+{% block title %}{{ title }}{% endblock %}
+{% block header %}{{ header }}{% endblock %}
+
+{% block dependencies %}
     <link rel="stylesheet" href="{% static 'register/css/register.css' %}">
-</head>
-<body>
-<div class="container">
-    <div class="content">
-        <header class="page-header">Регистрация пациента</header>
-        {% include "general/patient-form.html" %}
-    </div>
-</div>
-</body>
-</html>
+{% endblock %}
+
+{% block content %}
+    {% include "general/patient-form.html" %}
+{% endblock %}
