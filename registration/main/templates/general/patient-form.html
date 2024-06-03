@@ -1,5 +1,42 @@
 {% load static %}
-<form class="patient-form">
+<form class="patient-form" method="post">
+    {% csrf_token %}
+    <div class="data-row">
+        <label>Фамилия *</label>
+        {{ form.last_name }}
+    </div>
+    <div class="data-row">
+        <label>Имя *</label>
+        {{ form.first_name }}
+    </div>
+    <div class="data-row">
+        <label>Отчество</label>
+        {{ form.middle_name }}
+    </div>
+    <div class="data-row">
+        <label>Электронная почта</label>
+        {{ form.email }}
+    </div>
+    <div class="data-row">
+        <label>Номер телефона *</label>
+        {{ form.phone }}
+    </div>
+    <div class="data-row">
+        <label>Адрес проживания *</label>
+        {{ form.address }}
+    </div>
+    <div class="data-row">
+        <label>Дата рождения *</label>
+        {{ form.birth_date }}
+    </div>
+    <p>* обозначены обязательные поля</p>
+    {% include "general/action-buttons.html" %}
+</form>
+
+
+<!--
+<form class="patient-form" method="post">
+    {% csrf_token %}
     <div class="data-row">
         <label>Фамилия *</label>
         <input type="text" id="lastname" placeholder="Иванов"
@@ -17,7 +54,7 @@
     </div>
     <div class="data-row">
         <label>Электронная почта</label>
-        <input type="email" id="emailfield" placeholder="example@eg.com"
+        <input type="email" id="email" placeholder="example@eg.com"
         maxlength="254"/>
     </div>
     <div class="data-row">
@@ -39,3 +76,4 @@
     <p>* обозначены обязательные поля</p>
     {% include "general/action-buttons.html" %}
 </form>
+-->
