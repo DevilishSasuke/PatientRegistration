@@ -9,12 +9,36 @@
 {% endblock %}
 
 {% block content %}
-    <form class="get-patient">
-        <div class="data-row">
-            <label>Введите имя пациента</label>
-            <input type="text" id="patient-name" placeholder="Иванов Иван Иванович">
+    <form class="get-patient" method="get" autocomplete="off">
+        <div class="data-row" style="text-align: center;">
+            <label style="text-align: center;">Введите имя пациента</label>
+            {{ searchForm.query }}
+            <button type="submit" class="styled-button"
+                    style="background-color: #24a0ed;%;">Поиск</button>
         </div>
     </form>
-    {% for el in patients %}
-    {% endfor %}
+
+    {% if query %}
+        <h2>Результаты поисков</h2>
+        <div class="patient-list">
+            {% for patient in results %}
+                <a class="patient-info">
+                    <span class="name">
+                        {{ patient.first_name }}
+                    </span>
+                    <span class="lastname">
+                        {{ patient.last_name }}
+                    </span>
+                    <span class="middlename">
+                        {{ patient.middle_name }}
+                    </span>
+                    <span class="birthdate">
+                        {{ patient.birth_date }}
+                    </span>
+                </a>
+            {% empty %}
+                <header style='font-size: 5rem; color: #C22; padding: 50px 0px 50px 0px;'>Ничего не найдено</header>
+            {% endfor %}
+        </div>
+    {% endif %}
 {% endblock %}

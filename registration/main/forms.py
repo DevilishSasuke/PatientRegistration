@@ -1,5 +1,5 @@
 from .models import Patients
-from django.forms import ModelForm, TextInput, EmailInput, DateInput
+from django.forms import ModelForm, Form, TextInput, EmailInput, DateInput, CharField
 
 
 class PatientsForm(ModelForm):
@@ -59,3 +59,13 @@ class PatientsForm(ModelForm):
                 "min": "1900-01-01"
             }),
         }
+
+
+class SearchForm(Form):
+    query = CharField(max_length=200,
+                      widget=TextInput(attrs={
+                        "id": "patient-name",
+                        "placeholder": "Фамилия | Имя | Отчество",
+                        "required": True,
+                        "style": "text-align: center",
+                      }))
